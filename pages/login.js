@@ -7,6 +7,7 @@ import { HiAtSymbol, HiFingerPrint } from "react-icons/hi";
 import { useState } from 'react';
 import { signIn, signOut } from "next-auth/react"
 import { useFormik } from 'formik';
+import login_validate from '../lib/validate';
 
 export default function Login(){
 
@@ -16,8 +17,11 @@ export default function Login(){
             email: '',
             password: ''
         },
+        validate:login_validate,
         onSubmit
     })
+
+    console.log(formik.errors);
 
     async function onSubmit(values){
         console.log(values)
@@ -48,31 +52,38 @@ export default function Login(){
 
             {/* form */}
             <form className='flex flex-col gap-5' onSubmit={formik.handleSubmit}>
-                <div className={styles.input_group}>
+            <div className={`${styles.input_group} ${formik.errors.email && formik.touched.email ? 'border-rose-600' : ''}`}>
                     <input 
                     type="email"
                     name='email'
                     placeholder='Email'
                     className={styles.input_text}
+                    // onChange={formik.handleChange}
+                    // value={formik.values.email}
                     {...formik.getFieldProps('email')}
                     />
                     <span className='icon flex items-center px-4'>
                         <HiAtSymbol size={25} />
                     </span>
+                  
                 </div>
-                <div className={styles.input_group}>
+                
+                <div className={`${styles.input_group} ${formik.errors.password && formik.touched.password ? 'border-rose-600' : ''}`}>
                     <input 
                     type={`${show ? "text" : "password"}`}
                     name='password'
                     placeholder='password'
                     className={styles.input_text}
+                    // onChange={formik.handleChange}
+                    // value={formik.values.password}
                     {...formik.getFieldProps('password')}
                     />
                      <span className='icon flex items-center px-4' onClick={() => setShow(!show)}>
                         <HiFingerPrint size={25} />
                     </span>
+                   
                 </div>
-
+               
                 {/* login buttons */}
                 <div className="input-button">
                     <button type='submit' className={styles.button}>
