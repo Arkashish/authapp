@@ -37,7 +37,7 @@ export default function Register(){
         <section className='w-3/4 mx-auto flex flex-col gap-10'>
             <div className="title">
                 <h1 className='text-gray-800 text-4xl font-bold py-4'>Register</h1>
-                <p className='w-3/4 mx-auto text-gray-400'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, officia?</p>
+                <p className='w-3/4 mx-auto text-gray-400'>Like uncooked dough, my Pokémon are sticky!</p>
             </div>
 
             {/* form */}
@@ -109,7 +109,7 @@ export default function Register(){
             </form>
 
             {/* bottom */}
-            <p className='text-center text-gray-400 '>
+            <p className='text-center text-BLACK-400 '>
                 Already Have an account? <Link href={'/login'} className='text-blue-700'>Sign In</Link>
             </p>
         </section>

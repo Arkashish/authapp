@@ -46,8 +46,8 @@ export default function Login(){
         
         <section className='w-3/4 mx-auto flex flex-col gap-10'>
             <div className="title">
-                <h1 className='text-gray-800 text-4xl font-bold py-4'>Explore</h1>
-                <p className='w-3/4 mx-auto text-gray-400'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, officia?</p>
+                <h1 className='text-gray-800 text-4xl font-bold py-4'>Pokego</h1>
+                <p className='w-3/4 mx-auto text-gray-400'>If the Pokemon I liked were there, I’d go anywhere. </p>
             </div>
 
             {/* form */}
@@ -103,8 +103,8 @@ export default function Login(){
             </form>
 
             {/* bottom */}
-            <p className='text-center text-gray-400 '>
-                don't have an account yet? <Link href={'/register'} className='text-blue-700'>Sign Up</Link>
+            <p className='text-center text-black-400 '>
+                Don't have an account yet? <Link href={'/register'} className='text-blue-700'>Sign Up</Link>
             </p>
         </section>
 
